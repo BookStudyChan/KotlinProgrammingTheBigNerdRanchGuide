@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
 
     //플레이어의 상태 출력
     printPlayerStatus(auraColor,isBlessed,name,healthStatus)
-    castFireball(5)
+    castFireball()
 }
 
 private fun formatHealthStatus(healthPoint:Int,isBlessed:Boolean) :String{
@@ -38,6 +38,6 @@ private fun auraColor(isBlessed:Boolean, healthPoint: Int,isImmortal:Boolean):St
     return auraColor
 }
 
-private fun castFireball(numFireball:Int){
+private fun castFireball(numFireball:Int = 2){
     println("한 덩어리의 파이어볼이 나타난다. (x$numFireball)")
 }
