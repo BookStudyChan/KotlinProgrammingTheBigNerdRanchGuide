@@ -1,13 +1,35 @@
 fun main(args: Array<String>) {
+    val option = 5
+    when(option)
+    {
+        5-> chapter5()
+        4-> chapter4()
+        else -> return
+    }
+
+}
+
+
+private fun chapter5(){
     //5장
     // 익명함수 p79
+    // 암시적 반환 p 81
+    // 익명함수는 암시적으로 가장 마지막줄을 자동으로 return 해주는 함시적 반환을 사용한다.
     println({
         val currentYear = 2020
         "SimVillage 방문을 환영합니다. (copyright $currentYear)"
     }())
 
+    // 함수 타입 p 80
+    val greetingFunction : () ->String = {
+        val currentYear = 2020
+        "SimVillage 방문을 환영합니다. (copyright $currentYear)"
+    }
+    println(greetingFunction())
+}
 
-    return
+
+private fun chapter4(){
 
     val name ="마드리갈"
     val healthPoint = 89
@@ -26,7 +48,6 @@ fun main(args: Array<String>) {
     // ctrl + shift + p
     castFireball()
 }
-
 // 단일 표현식 p 65
 private fun formatHealthStatus(healthPoint:Int,isBlessed:Boolean) :String =
     when (healthPoint){
