@@ -1,4 +1,14 @@
 fun main(args: Array<String>) {
+    //5장
+    // 익명함수 p79
+    println({
+        val currentYear = 2020
+        "SimVillage 방문을 환영합니다. (copyright $currentYear)"
+    }())
+
+
+    return
+
     val name ="마드리갈"
     val healthPoint = 89
     var isBlessed = true
