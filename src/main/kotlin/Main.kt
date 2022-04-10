@@ -37,6 +37,14 @@ private fun chapter5(){
         "SimVillage 방문을 환영합니다. $it 님! (copyright $currentYear)"
     }
     println(greetingFunction2("chad"))
+
+    // 타입 추론 지원 p 85
+    val greetingFunction3 = { playerName:String, numBuildings:Int ->
+        val currentYear = 2020
+        println("$numBuildings 채 건물이 추가됨")
+        "SimVillage 방문을 환영합니다. $playerName 님! (copyright $currentYear)"
+    }
+    println(greetingFunction3("chad", 2))
 }
 
 
