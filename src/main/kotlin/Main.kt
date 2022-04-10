@@ -9,6 +9,11 @@ fun main(args: Array<String>) {
 
     //플레이어의 상태 출력
     printPlayerStatus(auraColor,isBlessed,name,healthStatus)
+
+    // 유닛함수 p 66
+    // 아무값도 반환하지 않는 함수를 나타내기 위해 사용되는 반환 타입 unit
+    // 리턴 타입이 없으면 제네릭을 처리하기 힘들다.
+    // ctrl + shift + p
     castFireball()
 }
 
