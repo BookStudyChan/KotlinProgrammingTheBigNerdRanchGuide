@@ -46,3 +46,5 @@ private fun auraColor(isBlessed:Boolean, healthPoint: Int,isImmortal:Boolean):St
 // 기본인자 p63
 private fun castFireball(numFireball:Int = 2) =
     println("한 덩어리의 파이어볼이 나타난다. (x$numFireball)")
+
+
