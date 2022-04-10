@@ -45,8 +45,15 @@ private fun chapter5(){
         "SimVillage 방문을 환영합니다. $playerName 님! (copyright $currentYear)"
     }
     println(greetingFunction3("chad", 2))
+
+    runSimulation("chad2",greetingFunction)
 }
 
+private fun runSimulation (playerName:String , greetingFunction:(String,Int)->String)
+{
+    val numBuilding = (1..3).shuffled().last() // 1,2,3중 하나를 무작위로 선택한다.
+    println(greetingFunction(playerName,numBuilding))
+}
 
 private fun chapter4(){
 
