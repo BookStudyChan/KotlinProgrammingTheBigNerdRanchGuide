@@ -22,11 +22,12 @@ private fun chapter5(){
 
     // 함수 타입 p 80
     // 함수 인자 p 82
-    val greetingFunction : (String) ->String = { playerName ->
+    val greetingFunction : (String, Int) ->String = { playerName, numBuildings->
         val currentYear = 2020
+        println("$numBuildings 채 건물이 추가됨")
         "SimVillage 방문을 환영합니다. $playerName 님! (copyright $currentYear)"
     }
-    println(greetingFunction("chad"))
+    println(greetingFunction("chad", 2))
 
 
     // it 키워드 p 83
