@@ -21,11 +21,21 @@ private fun chapter5(){
     }())
 
     // 함수 타입 p 80
-    val greetingFunction : () ->String = {
+    // 함수 인자 p 82
+    val greetingFunction : (String) ->String = { playerName ->
         val currentYear = 2020
-        "SimVillage 방문을 환영합니다. (copyright $currentYear)"
+        "SimVillage 방문을 환영합니다. $playerName 님! (copyright $currentYear)"
     }
-    println(greetingFunction())
+    println(greetingFunction("chad"))
+
+
+    // it 키워드 p 83
+    // 하나의 이니자만 받는 익명함수의 경우 이처럼 it 을 사용하여 제작 할 수 있다.
+    val greetingFunction2 : (String) ->String = {
+        val currentYear = 2020
+        "SimVillage 방문을 환영합니다. $it 님! (copyright $currentYear)"
+    }
+    println(greetingFunction2("chad"))
 }
 
 
