@@ -12,8 +12,9 @@ fun main(args: Array<String>) {
     castFireball()
 }
 
-private fun formatHealthStatus(healthPoint:Int,isBlessed:Boolean) :String{
-    val healthStatus = when (healthPoint){
+// 단일 표현식 p 65
+private fun formatHealthStatus(healthPoint:Int,isBlessed:Boolean) :String =
+    when (healthPoint){
         100 -> "최상의 상태"
         in 90..99 -> "약간의 찰과상이 있음"
         in 75..89 -> if (isBlessed){
@@ -24,8 +25,6 @@ private fun formatHealthStatus(healthPoint:Int,isBlessed:Boolean) :String{
         in 15..74->"많이 다친 것 같음"
         else -> "최악의 상태임!"
     }
-    return healthStatus
-}
 
 private fun printPlayerStatus(auraColor:String, isBlessed: Boolean, name:String,healthStatus:String){
     println("(Aura:$auraColor)" + "(Blessed : ${if (isBlessed)"YES" else "NO"})")
@@ -38,6 +37,7 @@ private fun auraColor(isBlessed:Boolean, healthPoint: Int,isImmortal:Boolean):St
     return auraColor
 }
 
-private fun castFireball(numFireball:Int = 2){
+// 단일 표현식 p 65
+// 기본인자 p63
+private fun castFireball(numFireball:Int = 2) =
     println("한 덩어리의 파이어볼이 나타난다. (x$numFireball)")
-}
