@@ -39,6 +39,7 @@ private fun chapter5(){
     println(greetingFunction2("chad"))
 
     // 타입 추론 지원 p 85
+    // 람다 함수
     val greetingFunction3 = { playerName:String, numBuildings:Int ->
         val currentYear = 2020
         println("$numBuildings 채 건물이 추가됨")
@@ -46,15 +47,23 @@ private fun chapter5(){
     }
     println(greetingFunction3("chad", 2))
 
-    runSimulation("chad2",greetingFunction)
+    runSimulation("chad2",::printConstructionCost,greetingFunction)
 }
+// p89
+// 재귀함숭에서는 사용하지 말것
 
-private fun runSimulation (playerName:String , greetingFunction:(String,Int)->String)
+inline fun runSimulation (playerName:String , costPrinter:(Int)->Unit,greetingFunction:(String,Int)->String)
 {
-    val numBuilding = (1..3).shuffled().last() // 1,2,3중 하나를 무작위로 선택한다.
-    println(greetingFunction(playerName,numBuilding))
+    val numBuildings = (1..3).shuffled().last() // 1,2,3중 하나를 무작위로 선택한다.
+    costPrinter(numBuildings)
+    println(greetingFunction(playerName,numBuildings))
 }
 
+//함수 참조
+fun printConstructionCost(numBuilding:Int){
+    val cost = 500
+    println("건축비용 : ${cost * numBuilding}")
+}
 private fun chapter4(){
 
     val name ="마드리갈"
